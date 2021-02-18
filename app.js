@@ -6,25 +6,13 @@ var logger = require('morgan');
 var mysql = require('mysql');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var connection = require('./lib/db');
 
 var app = express();
 
 
-const db = mysql.createConnection ({
-  host: 'localhost',
-  user: 'wawreczk_1153608',
-  password: '063458s*L',
-  database: 'WWW20_WAWRECZKO'
-});
 
-// connect to database
-db.connect((err) => {
-  if (err) {
-    throw err;
-  }
-  console.log('Connected to database');
-});
-global.db = db;
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -37,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
