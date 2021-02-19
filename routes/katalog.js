@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
             res.render('index');
         } else {
             // render to views/books/index.ejs
-            res.send({data:rows});
+            res.render('katalog',{data:rows});
         }
     });
 });

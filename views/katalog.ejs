@@ -1,0 +1,115 @@
+   <!DOCTYPE html>
+
+   <head>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta charset="UTF-8">
+       <link rel="stylesheet" href="/css/main.css">
+       <title>Moja strona</title>
+   </head>
+   <body>
+   <div class="header">
+       <h1>Domowa biblioteka</h1>
+   </div>
+   <div class="row">
+       <div class="col-2 menu">
+           <ul>
+               <li><a href="/">Strona g&lstrok;&oacute;wna</a></li>
+               <li><a href="../katalog"> Katalog</a></li>
+               <li><a href="/dodajksiazke">Dodaj książkę</a></li>
+               <li><a href="../projekt2/index.html">Projekt 2</a></li>
+               <li><a href="../projekt3/index.html">Projekt 3</a></li>
+           </ul>
+       </div>
+       <div class="col-8" id="tetowe">
+           <h1>Dzień dobry!</h1>
+           <p>Witamy na stronie startowej domowej biblioteki. Proszę wybrać interesującą opcję.</p>
+
+   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Szukaj po Autorze" title="Type in a name">
+   <input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Szukaj po Autorze2" title="Type in a name2">
+
+               <div class="card-body">
+
+                   <% if(data.length) { %>
+                   <table class="Table" id="myTable">
+                       <thead>
+                           <tr>
+                               <th scope="col">Numer</th>
+                               <th scope="col">ISBN</th>
+                               <th scope="col">Autor</th>
+                               <th scope="col">Tytuł</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                       <% for(var i = 0; i< data.length; i++) { %>
+                           <tr>
+                               <th scope="row"><%= (i+1) %></th>
+                               <td><%= data[i].ISBN%></td>
+                               <td><%= data[i].Autor%></td>
+                               <td><%= data[i].Tytul%></td>
+
+                           </tr>
+                       <% } %>
+                       </tbody>
+                   </table>
+                   <% } %>
+
+                   <!-- if result is empty -->
+                   <% if(!data.length) { %>
+                       <p class="text-center">No book found!</p>
+                   <% } %>
+
+                   </div>
+               </div>
+
+
+       </div>
+   </div>
+
+
+
+
+   <script>
+   function myFunction() {
+     var input, filter, table, tr, td, i, txtValue;
+     input = document.getElementById("myInput");
+     filter = input.value.toUpperCase();
+     table = document.getElementById("myTable");
+     tr = table.getElementsByTagName("tr");
+     for (i = 0; i < tr.length; i++) {
+       td = tr[i].getElementsByTagName("td")[1];
+       if (td) {
+         txtValue = td.textContent || td.innerText;
+         if (txtValue.toUpperCase().indexOf(filter) > -1) {
+           tr[i].style.display = "";
+         } else {
+           tr[i].style.display = "none";
+         }
+       }
+     }
+   }
+
+      function myFunction2() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput2");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[2];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+
+   </script>
+
+   </body>
+
+
+
