@@ -21,11 +21,10 @@
            </ul>
        </div>
        <div class="col-8" id="tetowe">
-           <h1>Dzień dobry!</h1>
-           <p>Witamy na stronie startowej domowej biblioteki. Proszę wybrać interesującą opcję.</p>
+           <h1>Katalog</h1>
 
    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Szukaj po Autorze" title="Type in a name">
-   <input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Szukaj po Autorze2" title="Type in a name2">
+   <input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Szukaj po Tytule" title="Type in a name2">
 
                <div class="card-body">
 
@@ -38,6 +37,8 @@
                                <th scope="col">Autor</th>
                                <th scope="col">Tytuł</th>
                                <th scope="col">Wypożyczający</th>
+                               <th scope="col">Wypożycz</th>
+
                            </tr>
                        </thead>
                        <tbody>
@@ -49,13 +50,18 @@
                                <td><%= data[i].Tytul%></td>
                                <% if(data[i].Wypozyczajacy){ %>
                                   <td><%= data[i].Wypozyczajacy%></td>
+                                  <td>
+                                  <a class="btn btn-danger delete"  href="/katalog/zwroc/<%=data[i].ID%>">Zwróć</a>
+                                  </td>
                                 <% } else{ %>
-                                  <td>BRAK</td>
+                                <td>BRAK</td>
+                                  <td>
+                                     <a class="btn btn-success edit" href="../katalog/wypozycz/<%=data[i].ID%>">Wypożycz</a>
+
+
+                                  </td>
+
                                <% } %>
-
-
-
-
                            </tr>
                        <% } %>
                        </tbody>
