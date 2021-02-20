@@ -37,6 +37,7 @@
                                <th scope="col">ISBN</th>
                                <th scope="col">Autor</th>
                                <th scope="col">Tytuł</th>
+                               <th scope="col">Wypożyczający</th>
                            </tr>
                        </thead>
                        <tbody>
@@ -46,6 +47,14 @@
                                <td><%= data[i].ISBN%></td>
                                <td><%= data[i].Autor%></td>
                                <td><%= data[i].Tytul%></td>
+                               <% if(data[i].Wypozyczajacy){ %>
+                                  <td><%= data[i].Wypozyczajacy%></td>
+                                <% } else{ %>
+                                  <td>BRAK</td>
+                               <% } %>
+
+
+
 
                            </tr>
                        <% } %>
