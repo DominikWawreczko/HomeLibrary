@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Moja strona</title>
+</head>
+<body>
+<div class="header">
+    <h1>Domowa biblioteka</h1>
+</div>
+<div class="row">
+    <div class="col-2 menu">
+        <ul>
+            <li><a href="/">Strona g&lstrok;&oacute;wna</a></li>
+            <li><a href="../katalog"> Katalog</a></li>
+            <li><a href="/dodajksiazke">Dodaj książkę</a></li>
+            <li><a href="../projekt2/index.html">Projekt 2</a></li>
+            <li><a href="../projekt3/index.html">Projekt 3</a></li>
+        </ul>
+    </div>
+    <div class="col-8" id="tetowe">
+        <h1>Dzień dobry!</h1>
+        <p>Witamy na stronie startowej domowej biblioteki. Proszę wybrać interesującą opcję.</p>
+        <div class="card-body">
+            <form action="dodajksiazke" method="post">
+                <div class="form-group">
+                    <label>ISBN:</label>
+                    <input type="text" class="form-control" name="ISBN" value="<%= ISBN %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Autor:</label>
+                    <input type="text" class="form-control" name="Autor" value="<%= Autor %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Tytuł:</label>
+                    <input type="text" class="form-control" name="Tytul" value="<%= Tytul %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-info" value="Dodaj"/>
+                </div>
+            </form>
+
+
+
+        </div>
+    </div>
+</div>
+</body>
