@@ -10,7 +10,7 @@
 
 
 ## General info
-This application can help manage every home library, remind us who borrowed our books or even write a review. 
+This application can help manage every home library, remind us who borrowed our books or even help us write a review. 
 
 
 ## Screenshots
