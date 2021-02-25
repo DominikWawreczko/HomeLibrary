@@ -3,13 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mysql = require('mysql');
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var connection = require('./lib/db');
+var connection = require('./config/db');
 var katalogRouter = require('./routes/catalog');
 var addBookRouter = require('./routes/addBook')
-var OpinionRouter = require('./routes/catalogOpinions')
+var OpinionRouter = require('./routes/opinionsCatalog')
 var addOpinionRouter = require('./routes/addOpinion')
 
 var app = express();
@@ -31,7 +29,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/katalogopini',OpinionRouter);
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/katalog',katalogRouter);
 app.use('/dodajksiazke',addBookRouter);
 app.use('/dodajopinie',addOpinionRouter);

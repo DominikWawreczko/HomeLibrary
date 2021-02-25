@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var indexController = require('../controllers/indexController')
 
-router.get('/', function(req, res, next) {
-  res.render('index', { problem: '' });
-});
+router.get('/', indexController.indexGet );
 
 module.exports = router;
