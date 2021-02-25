@@ -13,18 +13,20 @@
    <div class="row">
        <div class="col-2 menu">
            <ul>
-               <li><a href="/">Strona g&lstrok;&oacute;wna</a></li>
-               <li><a href="../katalog"> Katalog</a></li>
-               <li><a href="/dodajksiazke">Dodaj książkę</a></li>
-               <li><a href="../projekt2/index.html">Projekt 2</a></li>
-               <li><a href="../projekt3/index.html">Projekt 3</a></li>
+            <li><a href="/">Strona g&lstrok;&oacute;wna</a></li>
+            <li><a href="/katalog"> Katalog</a></li>
+            <li><a href="/dodajksiazke">Dodaj książkę</a></li>
+            <li><a href="/katalogopini">Katalog opini</a></li>
+            <li><a href="/dodajopinie">Dodaj opinię</a></li>
            </ul>
        </div>
        <div class="col-8" id="tetowe">
            <h1>Katalog</h1>
 
    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Szukaj po Autorze" title="Type in a name">
+   <p></p>
    <input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Szukaj po Tytule" title="Type in a name2">
+   <p></p>
 
                <div class="card-body">
 
@@ -70,7 +72,7 @@
 
                    <!-- if result is empty -->
                    <% if(!data.length) { %>
-                       <p class="text-center">No book found!</p>
+                       <p class="text-center">Brak ksiażek!</p>
                    <% } %>
 
                    </div>

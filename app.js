@@ -9,6 +9,8 @@ var usersRouter = require('./routes/users');
 var connection = require('./lib/db');
 var katalogRouter = require('./routes/katalog');
 var addBookRouter = require('./routes/dodajksiazke')
+var OpinionRouter = require('./routes/katalogopini')
+var addOpinionRouter = require('./routes/dodajopinie')
 
 var app = express();
 
@@ -26,10 +28,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/katalogopini',OpinionRouter);
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/katalog',katalogRouter);
 app.use('/dodajksiazke',addBookRouter);
+app.use('/dodajopinie',addOpinionRouter);
 
 
 // catch 404 and forward to error handler

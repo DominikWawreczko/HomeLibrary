@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Moja strona</title>
+</head>
+<body>
+<div class="header">
+    <h1>Domowa biblioteka</h1>
+</div>
+<div class="row">
+    <div class="col-2 menu">
+        <ul>
+            <li><a href="/">Strona g&lstrok;&oacute;wna</a></li>
+            <li><a href="/katalog"> Katalog</a></li>
+            <li><a href="/dodajksiazke">Dodaj książkę</a></li>
+            <li><a href="/katalogopini">Katalog opini</a></li>
+            <li><a href="/dodajopinie">Dodaj opinię</a></li>
+        </ul>
+    </div>
+    <div class="col-8" id="tetowe">
+        <h1>Katalog</h1>
+
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Szukaj po Tytule" title="Type in a name">
+        <p></p>
+        <input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Szukaj po Autorze" title="Type in a name2">
+        <p></p>
+
+
+        <div class="card-body">
+
+            <% if(data.length) { %>
+                <table class="Table" id="myTable">
+                    <thead>
+                    <tr>
+                        <th scope="col">Tytul</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Opinia</th>
+                        <th scope="col">Wystawiający</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% for(var i = 0; i< data.length; i++) { %>
+                        <tr>
+                            <td><%= data[i].Tytul%></td>
+                            <td><%= data[i].Autor%></td>
+                            <td><%= data[i].Opinia%></td>
+                            <td><%= data[i].Wystawiajacy%></td>
+
+
+                        </tr>
+                    <% } %>
+                    </tbody>
+                </table>
+            <% } %>
+
+            <% if(!data.length) { %>
+                <p class="text-center">Brak opini!</p>
+            <% } %>
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    function myFunction2() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput2");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+</script>
+
+</body>
+
+
+
