@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
         if(err) {
             res.render('index',{problem: "Ups pojawił się jakiś problem \!"});
         } else {
-            res.render('katalogopini',{data:rows});
+            res.render('catalogOpinions',{data:rows});
         }
     });
 });

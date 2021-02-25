@@ -7,10 +7,10 @@ var mysql = require('mysql');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var connection = require('./lib/db');
-var katalogRouter = require('./routes/katalog');
-var addBookRouter = require('./routes/dodajksiazke')
-var OpinionRouter = require('./routes/katalogopini')
-var addOpinionRouter = require('./routes/dodajopinie')
+var katalogRouter = require('./routes/catalog');
+var addBookRouter = require('./routes/addBook')
+var OpinionRouter = require('./routes/catalogOpinions')
+var addOpinionRouter = require('./routes/addOpinion')
 
 var app = express();
 

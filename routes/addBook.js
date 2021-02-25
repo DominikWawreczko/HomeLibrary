@@ -6,7 +6,7 @@ var dbConn  = require('../lib/db');
 
 module.exports = router;
 router.get('/', function(req, res, next) {
-    res.render('dodajksiazke', {
+    res.render('addBook', {
         ISBN: '',
         Autor: '',
         Tytul: '',

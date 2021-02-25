@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
         if(err) {
             res.render('index',{problem: "Ups pojawił się jakiś problem \!"});
         } else {
-            res.render('katalog',{data:rows});
+            res.render('catalog',{data:rows});
         }
     });
 });
@@ -40,7 +40,7 @@ router.get('/wypozycz/(:ID)', function(req, res, next) {
             res.redirect('/')
         }
         else {
-            res.render('wypozycz', {
+            res.render('rent', {
                 title: 'Wypożycz ksiażkę '+rows[0].Tytul+' autorstwa '+rows[0].Autor + ".",
                 ID: rows[0].ID,
                 Wypozyczajacy:"",
@@ -68,7 +68,7 @@ router.post('/wypozycz/(:ID)', function(req, res, next) {
                 res.redirect('/')
             }
             else {
-                res.render('wypozycz', {
+                res.render('rent', {
                     title: 'Wypożycz ksiażkę '+rows[0].Tytul+' autorstwa '+rows[0].Autor + ".",
                     ID: rows[0].ID,
                     Wypozyczajacy:Wypozyczajacy,

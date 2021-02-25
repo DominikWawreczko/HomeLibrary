@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
         if(err) {
             res.render('index',{problem: "Ups pojawił się jakiś problem \!"});
         } else {
-            res.render('dodajopinie',{
+            res.render('addOpinion',{
                 data:rows,
                 ISBN: '',
                 Opinia: '',
@@ -43,7 +43,7 @@ router.post('/', function(req, res, next) {
             if(err) {
                 res.render('index',{problem: "Ups pojawił się jakiś problem \!"});
             } else {
-                res.render('dodajopinie',{
+                res.render('addOpinion',{
                     data:rows,
                     ISBN: ISBN,
                     Opinia: Opinia,
