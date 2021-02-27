@@ -20,8 +20,8 @@
                <li><a href="/dodajopinie">Dodaj opinię</a></li>
            </ul>
        </div>
-       <div class="col-8" id="tetowe">
-           <h1><%=title%></h1>
+       <div class="col-8" id="t">
+           <h1><%=Title%></h1>
 
 
 
@@ -29,7 +29,7 @@
                    <form action="/katalog/wypozycz/<%= ID %>" method="post">
                        <div class="form-group">
                            <label>Wypożyczający:</label>
-                           <input type="text" class="form-control" name="Wypozyczajacy" value="<%= Wypozyczajacy %>" autocomplete="off">
+                           <input type="text" class="form-control" name="Borrower" value="<%= Borrower %>" autocomplete="off">
                        </div>
                         <div class="form-group">
                            <input type="submit" class="btn btn-info" value="Wypożycz"/>

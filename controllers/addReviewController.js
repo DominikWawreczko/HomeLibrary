@@ -2,16 +2,16 @@ const dbConn  = require('../config/db');
 
 exports.addOpinionGet = function(req, res, next) {
 
-    dbConn.query('Select ISBN, Autor, Tytul  From  Ksiazki ',function(err,rows)     {
+    dbConn.query('Select ISBN, Author, Title  From  Books ',function(err,rows)     {
 
         if(err) {
             res.render('index',{problem: "Ups pojawił się jakiś problem \!"});
         } else {
-            res.render('addOpinion',{
+            res.render('addReview',{
                 data:rows,
                 ISBN: '',
-                Opinia: '',
-                Wystawiajacy: '',
+                Review: '',
+                Writer: '',
                 problem: '',
             });
         }
@@ -21,25 +21,25 @@ exports.addOpinionGet = function(req, res, next) {
 exports.addOpinionPost = function(req, res, next) {
 
     let ISBN = req.body.ISBN;
-    let Opinia = req.body.Opinia;
-    let Wystawiajacy = req.body.Wystawiajacy;
+    let Review = req.body.Review;
+    let Writer = req.body.Writer;
 
     let errors = false;
 
-    if( Opinia.length === 0 || Wystawiajacy.length === 0) {
+    if( Review.length === 0 || Writer.length === 0) {
         errors = true;
 
 
-        dbConn.query('Select ISBN, Autor, Tytul  From  Ksiazki ',function(err,rows)     {
+        dbConn.query('Select ISBN, Author, Title  From  Books ',function(err,rows)     {
 
             if(err) {
                 res.render('index',{problem: "Ups pojawił się jakiś problem \!"});
             } else {
-                res.render('addOpinion',{
+                res.render('addReview',{
                     data:rows,
                     ISBN: ISBN,
-                    Opinia: Opinia,
-                    Wystawiajacy: Wystawiajacy,
+                    Review: Review,
+                    Writer: Writer,
                     problem: 'Wszystkie pola muszą być uzupełnione',
                 });
             }
@@ -52,10 +52,10 @@ exports.addOpinionPost = function(req, res, next) {
 
         var form_data = {
             ISBN: ISBN,
-            Opinia: Opinia,
-            Wystawiajacy: Wystawiajacy,
+            Review: Review,
+            Writer: Writer,
         }
-        dbConn.query('INSERT INTO Opinie SET ? ', form_data, function(err, result) {
+        dbConn.query('INSERT INTO Reviews SET ? ', form_data, function(err, result) {
             if (err) {
                 res.render('index',{problem: "Ups pojawił się jakiś problem \!"})
             } else {

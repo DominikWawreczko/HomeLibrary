@@ -22,11 +22,11 @@
        </div>
        <div class="col-8" id="tetowe">
            <h1>Katalog</h1>
+           <input type="text" id="myInput2" onkeyup="searchByTitle()" placeholder="Szukaj po Tytule" title="Type Title">
+           <p></p>
+           <input type="text" id="myInput" onkeyup="searchByAuthor()" placeholder="Szukaj po Autorze" title="Type Author">
+           <p></p>
 
-   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Szukaj po Autorze" title="Type in a name">
-   <p></p>
-   <input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Szukaj po Tytule" title="Type in a name2">
-   <p></p>
 
                <div class="card-body">
 
@@ -48,10 +48,10 @@
                            <tr>
                                <th scope="row"><%= (i+1) %></th>
                                <td><%= data[i].ISBN%></td>
-                               <td><%= data[i].Autor%></td>
-                               <td><%= data[i].Tytul%></td>
-                               <% if(data[i].Wypozyczajacy){ %>
-                                  <td><%= data[i].Wypozyczajacy%></td>
+                               <td><%= data[i].Author%></td>
+                               <td><%= data[i].Title%></td>
+                               <% if(data[i].Borrower){ %>
+                                  <td><%= data[i].Borrower%></td>
                                   <td>
                                   <a class="btn btn-danger delete"  href="/katalog/zwroc/<%=data[i].ID%>">Zwróć</a>
                                   </td>
@@ -86,7 +86,7 @@
 
 
    <script>
-   function myFunction() {
+   function searchByAuthor() {
      var input, filter, table, tr, td, i, txtValue;
      input = document.getElementById("myInput");
      filter = input.value.toUpperCase();
@@ -105,7 +105,7 @@
      }
    }
 
-      function myFunction2() {
+      function searchByTitle() {
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("myInput2");
         filter = input.value.toUpperCase();

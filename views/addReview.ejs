@@ -29,7 +29,7 @@
                     <select name="ISBN">
 
                         <% for(var i = 0; i< data.length; i++) { %>
-                            <option value="<%=data[i].ISBN %>" >ISBN: <%=data[i].ISBN %> Tytuł: <%=data[i].Tytul %> Autor: <%=data[i].Autor %></option>
+                            <option value="<%=data[i].ISBN %>" >ISBN: <%=data[i].ISBN %> Tytuł: <%=data[i].Title %> Autor: <%=data[i].Author %></option>
                         <% } %>
 
 
@@ -37,11 +37,11 @@
                 </div>
                 <div class="form-group">
                     <label>Opinia:</label>
-                    <input type="text" class="form-control" name="Opinia" value="<%= Opinia %>" autocomplete="off">
+                    <input type="text" class="form-control" name="Review" value="<%= Review %>" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label>Wystawiajacy:</label>
-                    <input type="text" class="form-control" name="Wystawiajacy" value="<%= Wystawiajacy %>" autocomplete="off">
+                    <input type="text" class="form-control" name="Writer" value="<%= Writer %>" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-info" value="Dodaj"/>

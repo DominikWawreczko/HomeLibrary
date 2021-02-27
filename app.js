@@ -7,8 +7,8 @@ var indexRouter = require('./routes/index');
 var connection = require('./config/db');
 var katalogRouter = require('./routes/catalog');
 var addBookRouter = require('./routes/addBook')
-var OpinionRouter = require('./routes/opinionsCatalog')
-var addOpinionRouter = require('./routes/addOpinion')
+var OpinionRouter = require('./routes/reviewsCatalog')
+var addOpinionRouter = require('./routes/addReview')
 
 var app = express();
 

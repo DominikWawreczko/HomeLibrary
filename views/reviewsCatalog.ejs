@@ -23,9 +23,9 @@
     <div class="col-8" id="tetowe">
         <h1>Katalog</h1>
 
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Szukaj po Tytule" title="Type in a name">
+        <input type="text" id="myInput" onkeyup="searchByTitle()" placeholder="Szukaj po Tytule" title="Type in a name">
         <p></p>
-        <input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Szukaj po Autorze" title="Type in a name2">
+        <input type="text" id="myInput2" onkeyup="searchByAuthor()" placeholder="Szukaj po Autorze" title="Type in a name2">
         <p></p>
 
 
@@ -44,10 +44,10 @@
                     <tbody>
                     <% for(var i = 0; i< data.length; i++) { %>
                         <tr>
-                            <td><%= data[i].Tytul%></td>
-                            <td><%= data[i].Autor%></td>
-                            <td><%= data[i].Opinia%></td>
-                            <td><%= data[i].Wystawiajacy%></td>
+                            <td><%= data[i].Title%></td>
+                            <td><%= data[i].Author%></td>
+                            <td><%= data[i].Review%></td>
+                            <td><%= data[i].Writer%></td>
 
 
                         </tr>
@@ -69,7 +69,7 @@
 
 
 <script>
-    function myFunction() {
+    function searchByTitle() {
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("myInput");
         filter = input.value.toUpperCase();
@@ -88,7 +88,7 @@
         }
     }
 
-    function myFunction2() {
+    function searchByAuthor() {
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("myInput2");
         filter = input.value.toUpperCase();

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var dbConn  = require('../config/db');
-var addOpinionController = require('../controllers/addOpinionController');
+var addOpinionController = require('../controllers/addReviewController');
 
 
 
